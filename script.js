@@ -37,25 +37,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize testimonial slider
-    $('.testimonial-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        centerMode: true,
-        variableWidth: true,
+    // Initialize gallery carousel
+    $('.gallery-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: false,
         autoplay: true,
-        autoplaySpeed: 5000,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    centerMode: false,
-                    variableWidth: false
-                }
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1,
+                center: false
+            },
+            768: {
+                items: 2,
+                center: false
+            },
+            992: {
+                items: 3,
+                center: true
             }
-        ]
+        }
+    });
+
+    // Initialize testimonials carousel
+    $('.testimonials-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 7000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            }
+        }
     });
 
     // Animate counters
@@ -131,23 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
             successModal.show();
             this.reset();
         });
-    });
-
-    // Animation on scroll
-    const animateElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
-    
-    const animationObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationDelay = entry.target.dataset.delay || '0s';
-                entry.target.style.animationPlayState = 'running';
-                animationObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    animateElements.forEach(element => {
-        element.style.animationPlayState = 'paused';
-        animationObserver.observe(element);
     });
 });

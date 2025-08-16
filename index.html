@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rambela - Hope for Every Child</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="text-primary fw-bold">Rambela</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#involved">Get Involved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#involved">Donate Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Rambela - Hope for Every Child</h1>
+                    <p class="lead mb-4">Providing education, shelter, and nutrition to ghetto kids, orphans, and street children. Together, we can build a brighter future.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#involved" class="btn btn-primary btn-lg px-4">Support Us</a>
+                        <a href="#programs" class="btn btn-outline-primary btn-lg px-4">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Happy children" class="img-fluid rounded shadow-lg animate-float">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">About Rambela</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm animate-fade-in">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary-light mb-4 mx-auto">
+                                <i class="fas fa-bullseye text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Our Mission</h3>
+                            <p class="text-muted">To provide underprivileged children with access to quality education, safe accommodation, and proper nutrition, empowering them to break the cycle of poverty.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary-light mb-4 mx-auto">
+                                <i class="fas fa-eye text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Our Vision</h3>
+                            <p class="text-muted">A world where every child, regardless of their background, has equal opportunities to thrive and reach their full potential.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary-light mb-4 mx-auto">
+                                <i class="fas fa-heart text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Our Values</h3>
+                            <p class="text-muted">Compassion, Integrity, Empowerment, and Community. We believe in transparency and accountability in all our operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Our Programs</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                    <p class="text-muted mt-3">We run several initiatives to support children in need</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card animate-slide-up">
+                        <div class="program-icon bg-education">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mt-4">Education</h3>
+                        <p class="text-muted">Providing school fees, uniforms, books, and mentorship to ensure children receive quality education.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card animate-slide-up" style="animation-delay: 0.2s;">
+                        <div class="program-icon bg-nutrition">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mt-4">Food & Nutrition</h3>
+                        <p class="text-muted">Daily meals and nutrition programs to combat malnutrition and support healthy development.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card animate-slide-up" style="animation-delay: 0.4s;">
+                        <div class="program-icon bg-accommodation">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mt-4">Accommodation</h3>
+                        <p class="text-muted">Safe shelters for homeless children, providing a stable environment for growth.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card animate-slide-up" style="animation-delay: 0.6s;">
+                        <div class="program-icon bg-orphan">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mt-4">Orphan Support</h3>
+                        <p class="text-muted">Comprehensive care including counseling, healthcare, and family placement services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="counter animate-count" data-target="1250">
+                        <h3 class="display-4 fw-bold mb-2">0</h3>
+                        <p class="text-uppercase small">Children Helped</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="counter animate-count" data-target="42">
+                        <h3 class="display-4 fw-bold mb-2">0</h3>
+                        <p class="text-uppercase small">Schools Supported</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="counter animate-count" data-target="18">
+                        <h3 class="display-4 fw-bold mb-2">0</h3>
+                        <p class="text-uppercase small">Shelters Built</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="counter animate-count" data-target="75">
+                        <h3 class="display-4 fw-bold mb-2">0</h3>
+                        <p class="text-uppercase small">Volunteers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section id="involved" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Get Involved</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                    <p class="text-muted mt-3">Join us in making a difference in children's lives</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm animate-fade-in">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary-light mb-4 mx-auto">
+                                <i class="fas fa-hand-holding-usd text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Donate</h3>
+                            <p class="text-muted mb-4">Your financial support helps us provide education, food, and shelter to children in need.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary-light mb-4 mx-auto">
+                                <i class="fas fa-hands-helping text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Volunteer</h3>
+                            <p class="text-muted mb-4">Share your time and skills to mentor children, teach, or help with our programs.</p>
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#volunteerModal">Join Us</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-primary-light mb-4 mx-auto">
+                                <i class="fas fa-handshake text-primary"></i>
+                            </div>
+                            <h3 class="h5 fw-bold mb-3">Partner</h3>
+                            <p class="text-muted mb-4">Businesses and organizations can partner with us to create lasting impact.</p>
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#partnerModal">Partner With Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Success Stories</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-item">
+                            <div class="testimonial-content bg-light p-4 rounded shadow-sm">
+                                <p class="mb-4">"Thanks to Rambela, I was able to finish high school and now I'm studying nursing. They gave me hope when I had none."</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K." class="rounded-circle me-3" width="60">
+                                    <div>
+                                        <h5 class="mb-1">Sarah K.</h5>
+                                        <p class="text-muted small mb-0">Former beneficiary</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <div class="testimonial-content bg-light p-4 rounded shadow-sm">
+                                <p class="mb-4">"Volunteering with Rambela has been the most rewarding experience. Seeing the children grow and thrive is priceless."</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="James M." class="rounded-circle me-3" width="60">
+                                    <div>
+                                        <h5 class="mb-1">James M.</h5>
+                                        <p class="text-muted small mb-0">Volunteer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <div class="testimonial-content bg-light p-4 rounded shadow-sm">
+                                <p class="mb-4">"Our company partnered with Rambela to build a shelter. Their transparency and impact made it an easy decision."</p>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa T." class="rounded-circle me-3" width="60">
+                                    <div>
+                                        <h5 class="mb-1">Lisa T.</h5>
+                                        <p class="text-muted small mb-0">Corporate Partner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">Contact Us</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                    <p class="text-muted mt-3">Get in touch to learn more about our work or how you can help</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h4 fw-bold mb-4">Send us a message</h3>
+                            <form id="contactForm" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">Please provide your name.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">Please provide a valid email.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                    <div class="invalid-feedback">Please provide a subject.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                    <div class="invalid-feedback">Please write your message.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="h4 fw-bold mb-4">Contact Information</h3>
+                            <div class="d-flex mb-4">
+                                <div class="icon-box bg-primary-light me-3 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="h6 fw-bold mb-1">Address</h5>
+                                    <p class="text-muted mb-0">123 Charity Street, Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <div class="icon-box bg-primary-light me-3 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="h6 fw-bold mb-1">Phone</h5>
+                                    <p class="text-muted mb-0">+254 700 123 456</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <div class="icon-box bg-primary-light me-3 flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="h6 fw-bold mb-1">Email</h5>
+                                    <p class="text-muted mb-0">info@rambela.org</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="icon-box bg-primary-light me-3 flex-shrink-0">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="h6 fw-bold mb-1">Working Hours</h5>
+                                    <p class="text-muted mb-0">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <h5 class="h6 fw-bold mb-3">Follow Us</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h4 fw-bold mb-4">Rambela</h3>
+                    <p class="text-muted">Providing hope and opportunities to ghetto kids, orphans, and street children through education, shelter, and nutrition.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="h5 fw-bold mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#programs" class="text-muted text-decoration-none">Programs</a></li>
+                        <li class="mb-2"><a href="#involved" class="text-muted text-decoration-none">Get Involved</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4 class="h5 fw-bold mb-4">Our Programs</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Education Support</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Food & Nutrition</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Children's Shelter</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Orphan Care</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Community Outreach</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4 class="h5 fw-bold mb-4">Newsletter</h4>
+                    <p class="text-muted">Subscribe to our newsletter to receive updates on our work.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted small mb-0">© 2023 Rambela. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted small mb-0">Registered Charity No. XYZ12345</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donate Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="donateModalLabel">Make a Donation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="donationAmount" class="form-label">Amount (USD)</label>
+                            <input type="number" class="form-control" id="donationAmount" placeholder="50" min="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="donationPurpose" class="form-label">Purpose</label>
+                            <select class="form-select" id="donationPurpose">
+                                <option selected>Where most needed</option>
+                                <option>Education</option>
+                                <option>Food & Nutrition</option>
+                                <option>Shelter</option>
+                                <option>Orphan Support</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donorName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="donorName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="donorEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="donorEmail">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="recurringDonation">
+                            <label class="form-check-label" for="recurringDonation">
+                                Make this a monthly recurring donation
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volunteer Modal -->
+    <div class="modal fade" id="volunteerModal" tabindex="-1" aria-labelledby="volunteerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="volunteerModalLabel">Volunteer Application</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="volunteerName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="volunteerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="volunteerEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="volunteerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="volunteerPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="volunteerPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="volunteerSkills" class="form-label">Skills/Expertise</label>
+                            <textarea class="form-control" id="volunteerSkills" rows="2"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="volunteerAvailability" class="form-label">Availability</label>
+                            <select class="form-select" id="volunteerAvailability">
+                                <option selected>Select availability</option>
+                                <option>Weekdays</option>
+                                <option>Weekends</option>
+                                <option>Both</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="volunteerInterests" class="form-label">Areas of Interest</label>
+                            <select class="form-select" id="volunteerInterests">
+                                <option selected>Select interest</option>
+                                <option>Teaching/Tutoring</option>
+                                <option>Mentoring</option>
+                                <option>Administrative Support</option>
+                                <option>Fundraising</option>
+                                <option>Event Planning</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Modal -->
+    <div class="modal fade" id="partnerModal" tabindex="-1" aria-labelledby="partnerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="partnerModalLabel">Partnership Inquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="partnerName" class="form-label">Organization Name</label>
+                            <input type="text" class="form-control" id="partnerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="partnerContact" class="form-label">Contact Person</label>
+                            <input type="text" class="form-control" id="partnerContact" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="partnerEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="partnerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="partnerPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="partnerPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="partnerType" class="form-label">Type of Partnership</label>
+                            <select class="form-select" id="partnerType">
+                                <option selected>Select type</option>
+                                <option>Corporate Sponsorship</option>
+                                <option>In-Kind Donations</option>
+                                <option>Employee Volunteering</option>
+                                <option>Event Sponsorship</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="partnerDetails" class="form-label">Additional Details</label>
+                            <textarea class="form-control" id="partnerDetails" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit Inquiry</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="icon-box bg-primary-light text-primary mb-4 mx-auto">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="h4 fw-bold mb-3">Thank You!</h3>
+                    <p class="text-muted mb-4">Your submission has been received. We'll get back to you soon.</p>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery (for testimonials slider) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+  </html>

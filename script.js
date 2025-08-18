@@ -62,25 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Initialize testimonials carousel
-    $('.testimonials-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 7000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2
-            }
-        }
-    });
-
     // Animate counters
     const counters = document.querySelectorAll('.animate-count');
     const speed = 200;
@@ -88,14 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateCounters() {
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const count = +counter.querySelector('h3').innerText;
+            const count = +counter.innerText;
             const increment = target / speed;
             
             if (count < target) {
-                counter.querySelector('h3').innerText = Math.ceil(count + increment);
+                counter.innerText = Math.ceil(count + increment);
                 setTimeout(animateCounters, 1);
             } else {
-                counter.querySelector('h3').innerText = target;
+                counter.innerText = target;
             }
         });
     }
@@ -141,18 +122,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })();
 
-    // Modal form handling
-    document.querySelectorAll('.modal form').forEach(form => {
-        form.addEventListener('submit', function(e) {
+    // Donation amount buttons
+    document.querySelectorAll('.donation-amounts .btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
             e.preventDefault();
-            const modalId = this.closest('.modal').id;
-            const modal = bootstrap.Modal.getInstance(document.getElementById(modalId));
-            modal.hide();
-            
-            // Show success modal
-            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-            successModal.show();
-            this.reset();
+            document.querySelectorAll('.donation-amounts .btn').forEach(b => {
+                b.classList.remove('btn-yellow');
+                b.classList.add('btn-outline-yellow');
+            });
+            this.classList.remove('btn-outline-yellow');
+            this.classList.add('btn-yellow');
         });
     });
 });

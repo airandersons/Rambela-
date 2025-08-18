@@ -208,7 +208,7 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/hero.jpg') no-repeat center center;
     background-size: cover;
     color: var(--white);
     padding: 0;

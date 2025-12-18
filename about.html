@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rwambela Drumline - Music Changing Lives in Uganda</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for about page */
+        .page-header {
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        .mission-vision {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .team-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .team-img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .history-timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 40px;
+        }
+        
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #ffc107;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ffc107;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #ffc107;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        .program-structure {
+            background-color: #fff9e6;
+            border-left: 5px solid #ffc107;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 80px;
+            color: #ffc107;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .stats-counter {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffc107;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #ffc107 0%, #e6a800 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+            
+            .mission-vision {
+                padding: 30px 20px;
+            }
+            
+            .team-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Rwambela Logo" class="logo-img me-2">
+                <span class="brand-text">Rwambela</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#drumline">Our Drumline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#impact">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#donate">Donate</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-warning" href="index.html#donate">Support Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">About Rwambela Drumline</h1>
+                    <p class="lead">Transforming lives through the power of rhythm, education, and community in Uganda since 2015</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-6">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="section-header mb-5">
+                        <span class="section-subtitle">Our Journey</span>
+                        <h2 class="section-title">From Busabala to Beyond</h2>
+                        <div class="divider"></div>
+                    </div>
+                    <p class="mb-4">Rwambela Drumline was founded in 2015 in the heart of Busabala, Kampala, by a group of musicians who saw the transformative power of drumming in their own lives and wanted to share it with vulnerable youth in their community.</p>
+                    <p class="mb-4">What began as informal drumming sessions for street children has grown into a comprehensive program that provides not only musical training but also education, shelter, and life skills to youth who would otherwise have limited opportunities.</p>
+                    <p class="mb-4">The name "Rwambela" comes from a local term meaning "to uplift" or "to elevate," which perfectly captures our mission of uplifting young people through music and community.</p>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="stats-counter me-3">8+</div>
+                                <div>Years of Service</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="stats-counter me-3">200+</div>
+                                <div>Youth Impacted</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rounded-4 overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a5d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rwambela Drumline performance" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-6">
+        <div class="container">
+            <div class="mission-vision">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="text-center">
+                            <div class="value-icon bg-yellow mb-4">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="h2 mb-4">Our Mission</h3>
+                            <p class="mb-0">To transform the lives of vulnerable youth in Uganda through drumming, education, and community support, creating pathways to sustainable livelihoods and positive community impact.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center">
+                            <div class="value-icon bg-red mb-4">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="h2 mb-4">Our Vision</h3>
+                            <p class="mb-0">A Uganda where every young person has access to education, artistic expression, and the opportunity to reach their full potential, regardless of their background or circumstances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our History Timeline -->
+    <section class="py-6 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Milestones</span>
+                <h2 class="section-title">Our Journey Through Time</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-description">Key moments in Rwambela's development</p>
+            </div>
+            
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <h4 class="mb-2">2015 - The Beginning</h4>
+                    <p class="text-muted">Rwambela Drumline is founded by Moses Kato and three fellow musicians in Busabala, Kampala. They begin informal drumming lessons for street children in the community.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="mb-2">2016 - First Formal Program</h4>
+                    <p class="text-muted">With donations from local businesses, Rwambela establishes its first structured program with 12 youth members. The group performs at its first wedding event.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="mb-2">2017 - Education Initiative</h4>
+                    <p class="text-muted">Rwambela begins using performance earnings to pay school fees for members. Partnership with local schools established to support educational needs.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="mb-2">2019 - Shelter Program</h4>
+                    <p class="text-muted">With growing support, Rwambela rents a house to provide shelter for its most vulnerable members. The dormitory can accommodate 15 youth at full capacity.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="mb-2">2020 - COVID-19 Response</h4>
+                    <p class="text-muted">Despite event cancellations during the pandemic, Rwambela pivots to online performances and receives international donations that help sustain the program.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="mb-2">2022 - Expansion</h4>
+                    <p class="text-muted">Rwambela expands to include vocational training in sound engineering and instrument repair. The drumline now performs at major corporate events across Kampala.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h4 class="mb-2">2023 - Present Day</h4>
+                    <p class="text-muted">Rwambela now supports 78 youth in education/training, provides 365 daily meals, and houses 32 members. The drumline has become a respected cultural institution in Uganda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-6">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">What Guides Us</span>
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon bg-yellow">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="mb-3">Compassion</h4>
+                    <p>We approach every young person with empathy, understanding their unique stories and challenges.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon bg-red">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h4 class="mb-3">Cultural Pride</h4>
+                    <p>We celebrate and preserve traditional Ugandan drumming while innovating for contemporary audiences.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon bg-blue">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 class="mb-3">Community</h4>
+                    <p>We believe in the power of collective support and shared responsibility for our youth.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon bg-green">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="mb-3">Education</h4>
+                    <p>We view learning as essential to empowerment, whether in music, academics, or life skills.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon bg-purple">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="mb-3">Integrity</h4>
+                    <p>We maintain transparency in our operations and accountability to our supporters and community.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon bg-orange">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 class="mb-3">Innovation</h4>
+                    <p>We continuously adapt our programs to meet evolving needs and create sustainable impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="py-6 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">Meet The Team</span>
+                <h2 class="section-title">Our Leadership</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-description">Passionate individuals driving our mission forward</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="team-card bg-white">
+                        <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=712&q=80" alt="Moses Kato" class="team-img">
+                        <div class="p-4">
+                            <h4 class="mb-1">Moses Kato</h4>
+                            <p class="text-yellow mb-3">Founder & Director</p>
+                            <p>Moses founded Rwambela after witnessing how drumming transformed his own life. He oversees all programs and partnerships.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="team-card bg-white">
+                        <img src="https://images.unsplash.com/photo-1589156191108-c762ff4b96ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" alt="Sarah Nalwoga" class="team-img">
+                        <div class="p-4">
+                            <h4 class="mb-1">Sarah Nalwoga</h4>
+                            <p class="text-yellow mb-3">Program Coordinator</p>
+                            <p>Sarah manages daily operations, coordinates educational support, and ensures each youth receives personalized attention.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="team-card bg-white">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="James Mwine" class="team-img">
+                        <div class="p-4">
+                            <h4 class="mb-1">James Mwine</h4>
+                            <p class="text-yellow mb-3">Head Drum Instructor</p>
+                            <p>James is a master drummer who trains all Rwambela members. He also arranges performances for events.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p>Our team also includes 8 dedicated support staff, 5 volunteer instructors, and our incredible Board of Advisors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Structure -->
+    <section class="py-6">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">How We Work</span>
+                <h2 class="section-title">Our Holistic Approach</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+            
+            <div class="program-structure">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center p-3">
+                            <div class="value-icon bg-yellow mb-3">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h4 class="mb-3">Music Training</h4>
+                            <p>Daily drumming lessons, performance opportunities, and music theory education for all members.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="text-center p-3">
+                            <div class="value-icon bg-red mb-3">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h4 class="mb-3">Education Support</h4>
+                            <p>School fee payments, tutoring, vocational training, and scholarship opportunities for members.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="text-center p-3">
+                            <div class="value-icon bg-blue mb-3">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4 class="mb-3">Shelter & Meals</h4>
+                            <p>Safe dormitory housing and nutritious daily meals for our residential members.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="text-center p-3">
+                            <div class="value-icon bg-green mb-3">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h4 class="mb-3">Counseling & Mentorship</h4>
+                            <p>Regular counseling sessions and one-on-one mentorship with trained staff and volunteers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="text-center p-3">
+                            <div class="value-icon bg-purple mb-3">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4 class="mb-3">Career Development</h4>
+                            <p>Job skills training, internship placements, and assistance with employment opportunities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="text-center p-3">
+                            <div class="value-icon bg-orange mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="mb-3">Community Reintegration</h4>
+                            <p>Support for family reunification and community integration when appropriate for each youth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-6 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">Voices of Impact</span>
+                <h2 class="section-title">What People Say About Us</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"Rwambela saved my life. I was living on the streets with no hope, no future. Today, I'm the lead drummer, and I'm studying sound engineering. They didn't just teach me music—they gave me a family and a future."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Joseph" class="author-img">
+                            <div>
+                                <h5 class="mb-0">Joseph</h5>
+                                <p class="text-muted mb-0">Lead Drummer, Age 19</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"As a corporate sponsor, we've seen firsthand how Rwambela transforms lives. Their performances bring incredible energy to our events, and knowing the impact of our support makes it even more meaningful."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David Ochieng" class="author-img">
+                            <div>
+                                <h5 class="mb-0">David Ochieng</h5>
+                                <p class="text-muted mb-0">Event Manager, Kampala Serena Hotel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"My son joined Rwambela two years ago after dropping out of school. Today, he's back in school, focused, and has found his passion. The discipline and structure of the drumline program changed everything for him."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Grace Nalubega" class="author-img">
+                            <div>
+                                <h5 class="mb-0">Grace Nalubega</h5>
+                                <p class="text-muted mb-0">Parent of Rwambela Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p class="mb-4">"I've volunteered with Rwambela for three years, teaching basic literacy. The transformation I've witnessed in these young people is remarkable. This organization doesn't just talk about change—they create it every day."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Emily Nakato" class="author-img">
+                            <div>
+                                <h5 class="mb-0">Emily Nakato</h5>
+                                <p class="text-muted mb-0">Volunteer Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-6">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="mb-4">Join Our Rhythm of Change</h2>
+                <p class="lead mb-5">Whether through donations, volunteering, or booking our performances, you can help us continue transforming lives through music.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="index.html#donate" class="btn btn-dark btn-lg px-4 py-3">Donate Now</a>
+                    <a href="index.html#donate" class="btn btn-outline-dark btn-lg px-4 py-3">Become a Volunteer</a>
+                    <a href="index.html#contact" class="btn btn-dark btn-lg px-4 py-3">Book Our Drumline</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-6 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <img src="logo.png" alt="Rwambela Logo" class="logo-img mb-4" width="60">
+                        <h3 class="mb-4">Rwambela Drumline</h3>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-map-marker-alt me-3"></i>
+                            <span>Busabala Road, Kampala, Uganda</span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-phone-alt me-3"></i>
+                            <span>+256 708745266</span>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <i class="fas fa-envelope me-3"></i>
+                            <span>info@rwambela.org</span>
+                        </div>
+                        <div class="contact-social">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form bg-white text-dark rounded p-4 shadow">
+                        <h3 class="mb-4">Get In Touch</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-yellow w-100">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4 bg-black text-white-50">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2023 Rwambela Drumline. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Registered Charity in Uganda #XYZ12345</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script>
+        // Simple animation for counters
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.stats-counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace('+', ''));
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + '+';
+                    }
+                }, 20);
+            });
+        });
+    </script>
+</body>
+                  </html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Drumline - Rwambela Drumline - Music Changing Lives in Uganda</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for drumline page */
+        .page-header {
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a5d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            color: white;
+            position: relative;
+        }
+        
+        .performance-type {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .performance-type:hover {
+            transform: translateY(-10px);
+        }
+        
+        .performance-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .performance-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .performance-type:hover .performance-image img {
+            transform: scale(1.05);
+        }
+        
+        .performance-content {
+            padding: 30px;
+        }
+        
+        .performance-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #ffc107;
+            color: #000;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .instruments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .instrument-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .instrument-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .instrument-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ffc107;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .rhythm-section {
+            background: linear-gradient(135deg, #ffc107 0%, #e6a800 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin: 40px 0;
+        }
+        
+        .member-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .member-card:hover .member-image img {
+            transform: scale(1.05);
+        }
+        
+        .member-info {
+            padding: 25px;
+        }
+        
+        .member-role {
+            color: #ffc107;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .member-social {
+            margin-top: 15px;
+        }
+        
+        .member-social a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 10px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .member-social a:hover {
+            background: #ffc107;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .training-schedule {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+        }
+        
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            width: 120px;
+            font-weight: 600;
+            color: #ffc107;
+        }
+        
+        .schedule-details {
+            flex: 1;
+        }
+        
+        .schedule-day {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .booking-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .video-gallery {
+            margin: 40px 0;
+        }
+        
+        .video-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 193, 7, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .video-item:hover .video-play {
+            background: #ffc107;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-info {
+            padding: 20px;
+            background: white;
+        }
+        
+        .performance-stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffc107;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+            
+            .performance-stats {
+                flex-direction: column;
+            }
+            
+            .stat-item {
+                margin-bottom: 20px;
+            }
+            
+            .rhythm-section {
+                padding: 30px 20px;
+            }
+            
+            .booking-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Rwambela Logo" class="logo-img me-2">
+                <span class="brand-text">Rwambela</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="drumline.html">Our Drumline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#impact">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#donate">Donate</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-warning" href="index.html#donate">Support Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">The Rwambela Drumline</h1>
+                    <p class="lead">Professional performances that transform lives through traditional Ugandan rhythm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-6">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="section-header mb-5">
+                        <span class="section-subtitle">Our Signature</span>
+                        <h2 class="section-title">Rhythm With Purpose</h2>
+                        <div class="divider"></div>
+                    </div>
+                    <p class="mb-4">The Rwambela Drumline is more than just a performance group - it's a vehicle for transformation. Our 45-member ensemble combines traditional Ugandan drumming techniques with contemporary performance styles to create unforgettable experiences.</p>
+                    <p class="mb-4">Every beat played represents hope, every rhythm performed represents opportunity, and every performance booked directly supports the education, shelter, and future of our youth members.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-yellow me-2"></i> Traditional Ugandan rhythms</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-yellow me-2"></i> Contemporary fusion pieces</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-yellow me-2"></i> Custom compositions for events</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-yellow me-2"></i> Professional sound equipment</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-yellow me-2"></i> Traditional Ugandan costumes</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-yellow me-2"></i> Interactive audience experiences</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="rounded-4 overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rwambela Drumline performance" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Stats -->
+    <section class="py-6 bg-light">
+        <div class="container">
+            <div class="performance-stats">
+                <div class="stat-item">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Performances</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Drumline Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Types -->
+    <section class="py-6">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">Where We Perform</span>
+                <h2 class="section-title">Types of Performances</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-description">We bring energy and cultural richness to every occasion</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="performance-type">
+                        <div class="performance-image">
+                            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Wedding performance">
+                        </div>
+                        <div class="performance-content">
+                            <span class="performance-badge">Most Popular</span>
+                            <h3 class="mb-3">Weddings & Celebrations</h3>
+                            <p class="mb-4">Make your special day unforgettable with our vibrant drum processions and ceremony performances. We customize rhythms to match your theme and create magical moments.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-yellow fw-bold">Starting at $300</span>
+                                <a href="#booking" class="btn btn-sm btn-yellow">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="performance-type">
+                        <div class="performance-image">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate event">
+                        </div>
+                        <div class="performance-content">
+                            <span class="performance-badge">Corporate</span>
+                            <h3 class="mb-3">Corporate Events</h3>
+                            <p class="mb-4">Energize your product launches, conferences, and company celebrations. Our drumline builds team spirit and leaves a lasting impression on clients and employees.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-yellow fw-bold">Starting at $500</span>
+                                <a href="#booking" class="btn btn-sm btn-yellow">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="performance-type">
+                        <div class="performance-image">
+                            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cultural festival">
+                        </div>
+                        <div class="performance-content">
+                            <span class="performance-badge">Cultural</span>
+                            <h3 class="mb-3">Cultural Festivals</h3>
+                            <p class="mb-4">We showcase authentic Ugandan drumming at national and international festivals. Experience the rich heritage of East African rhythms through our performances.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-yellow fw-bold">Contact for pricing</span>
+                                <a href="#booking" class="btn btn-sm btn-yellow">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="performance-type">
+                        <div class="performance-image">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="School workshop">
+                        </div>
+                        <div class="performance-content">
+                            <span class="performance-badge">Educational</span>
+                            <h3 class="mb-3">School Workshops</h3>
+                            <p class="mb-4">Interactive drumming workshops for schools and universities. Students learn basic rhythms, Ugandan cultural context, and the transformative power of music.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-yellow fw-bold">Starting at $200</span>
+                                <a href="#booking" class="btn btn-sm btn-yellow">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="performance-type">
+                        <div class="performance-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Charity event">
+                        </div>
+                        <div class="performance-content">
+                            <span class="performance-badge">Community</span>
+                            <h3 class="mb-3">Charity & Community Events</h3>
+                            <p class="mb-4">We perform at fundraisers, community gatherings, and NGO events. Special rates available for other nonprofit organizations making a difference.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-yellow fw-bold">Discounted rates</span>
+                                <a href="#booking" class="btn btn-sm btn-yellow">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="performance-type">
+                        <div class="performance-image">
+                            <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Private parties">
+                        </div>
+                        <div class="performance-content">
+                            <span class="performance-badge">Entertainment</span>
+                            <h3 class="mb-3">Private Parties & Special Occasions</h3>
+                            <p class="mb-4">Birthdays, anniversaries, family reunions - we bring joy and energy to your personal celebrations with customized drumming performances.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-yellow fw-bold">Starting at $250</span>
+                                <a href="#booking" class="btn btn-sm btn-yellow">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Instruments -->
+    <section class="py-6 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">Our Sound</span>
+                <h2 class="section-title">Traditional Instruments</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-description">Authentic Ugandan drums and percussion</p>
+            </div>
+            
+            <div class="instruments-grid">
+                <div class="instrument-card">
+                    <div class="instrument-icon">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h4 class="mb-3">Engalabi</h4>
+                    <p class="mb-0">Traditional long drum from Uganda, played with hands. Produces deep, resonant bass tones that form the foundation of our rhythms.</p>
+                </div>
+                
+                <div class="instrument-card">
+                    <div class="instrument-icon">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h4 class="mb-3">Entenga</h4>
+                    <p class="mb-0">Set of tuned drums played by multiple drummers. Creates melodic patterns that complement the main rhythm section.</p>
+                </div>
+                
+                <div class="instrument-card">
+                    <div class="instrument-icon">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h4 class="mb-3">Djembe</h4>
+                    <p class="mb-0">West African drum now integral to Ugandan music. Provides sharp slaps and clear tones for rhythmic accents.</p>
+                </div>
+                
+                <div class="instrument-card">
+                    <div class="instrument-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4 class="mb-3">Adungu</h4>
+                    <p class="mb-0">Traditional bow harp from Northern Uganda. Adds melodic and harmonic layers to our performances.</p>
+                </div>
+                
+                <div class="instrument-card">
+                    <div class="instrument-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4 class="mb-3">Endingidi</h4>
+                    <p class="mb-0">Tube fiddle with one string, played with a bow. Provides unique timbres and melodic lines in our arrangements.</p>
+                </div>
+                
+                <div class="instrument-card">
+                    <div class="instrument-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h4 class="mb-3">Percussion</h4>
+                    <p class="mb-0">Shakers, bells, and rattles that add texture and complexity to our rhythmic patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Members -->
+    <section class="py-6">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">Meet The Artists</span>
+                <h2 class="section-title">Featured Drumline Members</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-description">Youth transforming their lives through rhythm</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Joseph">
+                        </div>
+                        <div class="member-info">
+                            <h4 class="mb-1">Joseph</h4>
+                            <div class="member-role">Lead Drummer</div>
+                            <p class="mb-3">Joined Rwambela in 2016 after living on Kampala's streets. Now studying sound engineering at Makerere University.</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah">
+                        </div>
+                        <div class="member-info">
+                            <h4 class="mb-1">Sarah</h4>
+                            <div class="member-role">Section Leader</div>
+                            <p class="mb-3">Formerly a street vendor, now leads our bass drum section and mentors younger drummers in the program.</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David">
+                        </div>
+                        <div class="member-info">
+                            <h4 class="mb-1">David</h4>
+                            <div class="member-role">Percussion Captain</div>
+                            <p class="mb-3">Master of traditional Ugandan instruments. Training to become a music teacher after completing his diploma.</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=780&q=80" alt="Grace">
+                        </div>
+                        <div class="member-info">
+                            <h4 class="mb-1">Grace</h4>
+                            <div class="member-role">Performance Director</div>
+                            <p class="mb-3">Choreographs our performances and manages client relations. Studying business administration part-time.</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="about.html" class="btn btn-outline-yellow">Meet All Our Members</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rhythm of Training -->
+    <section class="rhythm-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">The Rhythm of Training</h2>
+                    <p class="lead mb-4">Behind every performance is hours of dedicated practice, musical education, and personal development. Our drumline members train 6 days a week, balancing music with academics and life skills.</p>
+                    <p>Each performance directly funds the training, education, and shelter of our members. When you book the Rwambela Drumline, you're investing in futures.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="training-schedule bg-white text-dark">
+                        <h5 class="mb-4">Weekly Schedule</h5>
+                        <div class="schedule-item">
+                            <div class="schedule-time">6:00 AM</div>
+                            <div class="schedule-details">
+                                <div class="schedule-day">Morning Practice</div>
+                                <div>Rhythm drills and technique</div>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">9:00 AM</div>
+                            <div class="schedule-details">
+                                <div class="schedule-day">School/Studies</div>
+                                <div>Formal education for all members</div>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">2:00 PM</div>
+                            <div class="schedule-details">
+                                <div class="schedule-day">Ensemble Practice</div>
+                                <div>Full drumline rehearsals</div>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">4:00 PM</div>
+                            <div class="schedule-details">
+                                <div class="schedule-day">Life Skills</div>
+                                <div>Vocational training & mentoring</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="py-6 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-6">
+                <span class="section-subtitle">Watch Us</span>
+                <h2 class="section-title">Performance Highlights</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a5d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Wedding performance">
+                            <div class="video-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="mb-2">Traditional Wedding Procession</h5>
+                            <p class="text-muted mb-0">Kampala, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate event">
+                            <div class="video-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h5 class="mb-2">Corporate Product Launch</h5>
+                            <p class="text-muted mb-0">Kampala Serena Hotel
